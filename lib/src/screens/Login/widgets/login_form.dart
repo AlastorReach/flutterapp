@@ -21,8 +21,9 @@ class _LoginFormState extends State<LoginForm> {
               }
               return null;
             },
+            style: TextStyle(fontWeight: FontWeight.bold),
             decoration: InputDecoration(
-                hintText: 'User name', labelText: 'User name or Email'),
+                hintText: 'User name', labelText: 'User name or Email',),
           ),
           TextFormField(
             maxLines: 1,
@@ -33,18 +34,22 @@ class _LoginFormState extends State<LoginForm> {
               }
               return null;
             },
+            style: TextStyle(fontWeight: FontWeight.bold),
             decoration:
                 InputDecoration(hintText: 'Password', labelText: 'Password'),
           ),
-          RaisedButton(
+          Container(
+            width: MediaQuery.of(context).size.width,
+            child:RaisedButton(
+            color: Colors.pink,
             onPressed: () {
               if (_formKey.currentState.validate()) {
                 Scaffold.of(context)
                     .showSnackBar(SnackBar(content: Text('Processing Data')));
               }
             },
-            child: Text('SUBMIT'),
-          )
+            child: Text('Sign In', style: TextStyle(color: Colors.white),),
+          ))
         ],
       ),
     );
