@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/src/screens/Logins/logins_screen.dart';
 import '../Settings/settings_screen.dart';
 import '../Login/login_screen.dart';
 import '../../common/widgets/drawer_child.dart';
@@ -25,12 +26,12 @@ class HomeScreen extends StatelessWidget {
                 },
               ),
               RaisedButton(
-                child: Text('Login Screen'),
+                child: Text('Logins Screens'),
                 onPressed: () {
                   Navigator.of(context).push(PageRouteBuilder(
                       opaque: false,
                       pageBuilder: (BuildContext context, _, __) =>
-                          LoginScreen()));
+                          LoginsScreen()));
                 },
               )
             ],

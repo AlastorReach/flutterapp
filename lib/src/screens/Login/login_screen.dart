@@ -46,7 +46,13 @@ class LoginScreen extends StatelessWidget {
                                   textAlign: TextAlign.left,
                                   style: TextStyle(fontSize: 30),
                                 ),
-                                LoginForm(),
+                                LoginForm(
+                                  btnSummitBgColor: Colors.pink,
+                                  btnTextColor: Colors.white,
+                                  usernameColor: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                                  passwordColor: Theme.of(context).brightness == Brightness.light ? Colors.black : Colors.white,
+                                  onValidate: (){},
+                                ),
                                 ForgotPassword(),
                                 DontHaveAnAccount(),
                                 Expanded(
@@ -56,7 +62,9 @@ class LoginScreen extends StatelessWidget {
                                           mainAxisSize: MainAxisSize.min,
                                           children: <Widget>[
                                             _showOrDivider(),
-                                            SizedBox(height: 20,),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
                                             _showSocialIcons()
                                           ],
                                         ))),
@@ -88,7 +96,7 @@ class LoginScreen extends StatelessWidget {
           iconColor: Colors.white,
           height: 30,
           width: 30,
-          socialIcon: CustomIcons.facebook,
+          socialIcon: CustomIcons.google,
           toDo: FacebookLoginIntent.onFacebookLoginIntent,
         ),
         SocialLoginIcon(
@@ -96,7 +104,7 @@ class LoginScreen extends StatelessWidget {
           iconColor: Colors.white,
           height: 30,
           width: 30,
-          socialIcon: CustomIcons.facebook,
+          socialIcon: CustomIcons.twitter,
           toDo: FacebookLoginIntent.onFacebookLoginIntent,
         )
       ],
@@ -105,9 +113,15 @@ class LoginScreen extends StatelessWidget {
 
   Widget _showOrDivider() {
     return Row(children: <Widget>[
-      Expanded(child: Divider(color: Colors.black54,)),
+      Expanded(
+          child: Divider(
+        color: Colors.black54,
+      )),
       Text("  OR  "),
-      Expanded(child: Divider(color: Colors.black54,)),
+      Expanded(
+          child: Divider(
+        color: Colors.black54,
+      )),
     ]);
   }
 }
